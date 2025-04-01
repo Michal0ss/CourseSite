@@ -1,0 +1,27 @@
+[
+    {
+      "id":1,
+      "image": "images/student.svg",
+      "value": "5k",
+      "label": "Online Courses"
+    },
+    {
+      "id":2,
+      "image": "images/teacher.svg",
+      "value": "300+",
+      "label": "Expert Teachers"
+    },
+    {
+      "id":3,
+      "image": "images/lessons.svg",
+      "value": "10k",
+      "label": "Lessons Watched"
+    },
+    {
+      "id":4,
+      "image": "images/users.svg",
+      "value": "20k",
+      "label": "Happy Students"
+    }
+]
+  
