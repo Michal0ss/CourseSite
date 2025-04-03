@@ -1,19 +1,22 @@
 [
-    {
-      "id": 1,
-      "title": "JavaScript for Beginners",
-      "instructor": "John Doe",
-      "difficulty": "Beginner",
-      "topic": "Programming",
-      "image": "images/js-course.jpg"
-    },
-    {
-      "id": 2,
-      "title": "HTML & CSS Essentials",
-      "instructor": "Jane Smith",
-      "difficulty": "Intermediate",
-      "topic": "Web Design",
-      "image": "images/html-css.jpg"
-    }
-  ]
-  
+  {
+    "image": "images/cat1.svg",
+    "name": "Docker",
+    "courses": 12
+  },
+  {
+    "image": "images/front.svg",
+    "name": "Front-End",
+    "courses": 18
+  },
+  {
+    "image": "images/python.svg",
+    "name": "Python Dev",
+    "courses": 9
+  },
+  {
+    "image": "images/cpp.svg",
+    "name": "GameDev",
+    "courses": 21
+  }
+]

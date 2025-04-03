@@ -20,7 +20,32 @@ async function loadStats() {
       container.appendChild(box);
     });
   }
-  
-  // Załaduj dane po wczytaniu strony
-  document.addEventListener("DOMContentLoaded", loadStats);
+
+async function loadCourses(){
+  const res = await fetch('data/courses.json');
+  const popular_course = await res.json();
+  const container = document.getElementById('courses-container');
+  if(!container) return;
+
+  container.innerHTML='';
+
+  popular_course.forEach(course=>{
+    const card = document.createElement('div');
+    card.classList.add('box');
+    card.innerHTML= `
+    <img src="${course.image}" alt="${course.name}" width="60">
+    <h4>${course.name}</h4>
+    <p>${course.courses} Courses</p>
+  `;
+  container.appendChild(card);
+  });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  loadCourses();
+});
+
+
+// Załaduj dane po wczytaniu strony
+document.addEventListener("DOMContentLoaded", loadStats);
   
