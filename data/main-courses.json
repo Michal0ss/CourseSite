@@ -1,0 +1,111 @@
+[
+    {
+      "id": "frontend",
+      "image": "images/frontend1.svg",
+      "price": 20,
+      "title": "The Complete Front-End Course 2025",
+      "duration": "9h 30min",
+      "rating": 3,
+      "reviews": 5
+    },
+    {
+      "id": "backend",
+      "image": "images/backend1.svg",
+      "price": 25,
+      "title": "Mastering Node.js & Express",
+      "duration": "8h 10min",
+      "rating": 4,
+      "reviews": 12
+    },
+    {
+      "id": "design",
+      "image": "images/design1.svg",
+      "price": 15,
+      "title": "UI/UX Design Basics",
+      "duration": "6h 00min",
+      "rating": 4,
+      "reviews": 9
+    },
+    {
+      "id": "frontend",
+      "image": "images/frontend2.svg",
+      "price": 30,
+      "title": "React from Zero to Hero",
+      "duration": "12h 15min",
+      "rating": 5,
+      "reviews": 20
+    },
+    {
+      "id": "backend",
+      "image": "images/backend2.svg",
+      "price": 22,
+      "title": "PHP & Laravel Essentials",
+      "duration": "10h 00min",
+      "rating": 3,
+      "reviews": 7
+    },
+    {
+      "id": "design",
+      "image": "images/design2.svg",
+      "price": 18,
+      "title": "Graphic Design in Figma",
+      "duration": "7h 30min",
+      "rating": 5,
+      "reviews": 11
+    },
+    {
+      "id": "marketing",
+      "image": "images/marketing1.svg",
+      "price": 19,
+      "title": "Digital Marketing Crash Course",
+      "duration": "5h 45min",
+      "rating": 4,
+      "reviews": 6
+    },
+    {
+      "id": "frontend",
+      "image": "images/frontend3.svg",
+      "price": 27,
+      "title": "Advanced JavaScript",
+      "duration": "9h 50min",
+      "rating": 5,
+      "reviews": 14
+    },
+    {
+      "id": "backend",
+      "image": "images/backend3.svg",
+      "price": 20,
+      "title": "Django Web Development",
+      "duration": "8h 20min",
+      "rating": 4,
+      "reviews": 10
+    },
+    {
+      "id": "design",
+      "image": "images/design3.svg",
+      "price": 16,
+      "title": "Wordpress Design",
+      "duration": "6h 30min",
+      "rating": 3,
+      "reviews": 4
+    },
+    {
+      "id": "frontend",
+      "image": "images/frontend4.svg",
+      "price": 22,
+      "title": "HTML & CSS Masterclass",
+      "duration": "7h 40min",
+      "rating": 4,
+      "reviews": 13
+    },
+    {
+      "id": "marketing",
+      "image": "images/marketing2.svg",
+      "price": 24,
+      "title": "SEO & Google Ads 2025",
+      "duration": "6h 10min",
+      "rating": 5,
+      "reviews": 15
+    }
+  ]
+  
