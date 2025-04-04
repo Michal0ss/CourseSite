@@ -220,7 +220,7 @@ header.sticky{
 
 .course-wrapper{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px,auto));
+    grid-template-columns: repeat(auto-fit, minmax(200px,auto));
     gap: 1.5rem;
     align-items: center;
     cursor: pointer;
@@ -561,3 +561,11 @@ header.sticky{
     }
   }
   
+
+.search-bar input{
+    display: inline-block;
+    outline: none;
+    padding: 16px 140px 16px 15px;
+    border: 2px solid var(--main-color);
+    border-radius: 30px;
+}

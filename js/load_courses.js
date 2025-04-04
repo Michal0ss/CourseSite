@@ -1,4 +1,4 @@
-export async function loadCourses(searchTerm = "") {
+export async function loadCourses(searchTerm = "", category = "all") {
   const res = await fetch('data/main-courses.json');
   const courses = await res.json();
   const container = document.getElementById('courses-list');
@@ -8,11 +8,18 @@ export async function loadCourses(searchTerm = "") {
   const itemsPerPage = 10;
   let currentPage = 1;
 
-  // FILTRUJEMY jeśli searchTerm nie jest pusty
+  // 🔍 Filtruj po nazwie kursu
   let filteredCourses = courses;
   if (searchTerm) {
-    filteredCourses = courses.filter(course =>
+    filteredCourses = filteredCourses.filter(course =>
       course.title.toLowerCase().startsWith(searchTerm)
+    );
+  }
+
+  // 📂 Filtruj po kategorii
+  if (category !== "all") {
+    filteredCourses = filteredCourses.filter(course =>
+      course.category === category
     );
   }
 
@@ -25,7 +32,7 @@ export async function loadCourses(searchTerm = "") {
     currentCourses.forEach(course => {
       const row = document.createElement('div');
       row.classList.add('row');
-      row.setAttribute('data-category', course.id);
+      row.setAttribute('data-category', course.category); // zmienione z id
 
       const stars = Array(course.rating)
         .fill(`<a href="#"><i class="bx bxs-star"></i></a>`)
@@ -71,6 +78,7 @@ export async function loadCourses(searchTerm = "") {
   renderPage(currentPage);
   renderPagination();
 }
+
 
 
 
