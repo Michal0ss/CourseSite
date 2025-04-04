@@ -1,4 +1,4 @@
-async function loadStats() {
+export async function loadStats() {
     const res = await fetch('data/stats.json');
     const stats = await res.json();
     const container = document.getElementById('stats-container');
@@ -21,7 +21,7 @@ async function loadStats() {
     });
   }
 
-async function loadPopularCourses(){
+export async function loadPopularCourses(){
   const res = await fetch('data/courses.json');
   const popular_course = await res.json();
   const container = document.getElementById('courses-container');
@@ -41,11 +41,3 @@ async function loadPopularCourses(){
   });
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  loadPopularCourses();
-});
-
-
-// Załaduj dane po wczytaniu strony
-document.addEventListener("DOMContentLoaded", loadStats);
-  

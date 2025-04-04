@@ -1,19 +1,29 @@
-async function loadCourses() {
-    const res = await fetch('data/main-courses.json');
-    const courses = await res.json();
-    const container = document.getElementById('courses-list');
-    if (!container) return;
+export async function loadCourses() {
+  const res = await fetch('data/main-courses.json');
+  const courses = await res.json();
+  const container = document.getElementById('courses-list');
+  const pagination = document.getElementById('pagination');
+  if (!container || !pagination) return;
 
-    container.innerHTML= '';
+  const itemsPerPage = 10;
+  let currentPage = 1;
 
-    courses.forEach(course=>{
-        const row = document.createElement('div');
-        row.classList.add('row');
-        row.setAttribute('data-category', course.id);
+  function renderPage(page) {
+    container.innerHTML = '';
+    const start = (page - 1) * itemsPerPage;
+    const end = start + itemsPerPage;
+    const currentCourses = courses.slice(start, end);
 
-        const stars = Array(course.rating).fill(`<a href="#"><i class="bx bxs-star"></i></a>`).join('');
+    currentCourses.forEach(course => {
+      const row = document.createElement('div');
+      row.classList.add('row');
+      row.setAttribute('data-category', course.id);
 
-        row.innerHTML = `
+      const stars = Array(course.rating)
+        .fill(`<a href="#"><i class="bx bxs-star"></i></a>`)
+        .join('');
+
+      row.innerHTML = `
         <img src="${course.image}" alt="${course.title}">
         <div class="courses-text">
           <h5>${course.price}$</h5>
@@ -21,15 +31,82 @@ async function loadCourses() {
           <h6>${course.duration}</h6>
           <div class="rating">
             <div class="stars">${stars}</div>
-            <div class="review"><p>{${course.reviews} Reviews}</p></div>
+            <div class="review"><p>${course.reviews} Reviews</p></div>
           </div>
         </div>
-        `;
-        container.appendChild(row);
+      `;
+      container.appendChild(row);
     });
+  }
+
+  function renderPagination() {
+    pagination.innerHTML = '';
+    const totalPages = Math.ceil(courses.length / itemsPerPage);
+
+    for (let i = 1; i <= totalPages; i++) {
+      const btn = document.createElement('button');
+      btn.textContent = i;
+      btn.classList.add('page-btn');
+      if (i === currentPage) btn.classList.add('active');
+
+      btn.addEventListener('click', () => {
+        currentPage = i;
+        renderPage(currentPage);
+        renderPagination();
+
+        // scroll to the beginning of section
+        document.querySelector('.main-btn').scrollIntoView({ behavior: 'smooth' });
+      });
+
+      pagination.appendChild(btn);
+    }
+  }
+
+  // Render initial
+  renderPage(currentPage);
+  renderPagination();
 }
 
 
-document.addEventListener("DOMContentLoaded", () => {
-    loadCourses();
-  });
+
+
+
+
+
+
+
+
+
+
+
+// export async function loadCourses() {
+//     const res = await fetch('data/main-courses.json');
+//     const courses = await res.json();
+//     const container = document.getElementById('courses-list');
+//     if (!container) return;
+
+//     container.innerHTML= '';
+
+//     courses.forEach(course=>{
+//         const row = document.createElement('div');
+//         row.classList.add('row');
+//         row.setAttribute('data-category', course.id);
+
+//         const stars = Array(course.rating).fill(`<a href="#"><i class="bx bxs-star"></i></a>`).join('');
+
+//         row.innerHTML = `
+//         <img src="${course.image}" alt="${course.title}">
+//         <div class="courses-text">
+//           <h5>${course.price}$</h5>
+//           <h3>${course.title}</h3>
+//           <h6>${course.duration}</h6>
+//           <div class="rating">
+//             <div class="stars">${stars}</div>
+//             <div class="review"><p>${course.reviews} Reviews</p></div>
+//           </div>
+//         </div>
+//         `;
+//         container.appendChild(row);
+//     });
+// }
+

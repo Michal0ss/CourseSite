@@ -75,7 +75,7 @@ header{
     color: var(--main-color);
 }
 
-#menu-icon{
+.menu-icon{
     font-size: 32px;
     color: var(--text-color);
     z-index: 10001;
@@ -262,6 +262,26 @@ header.sticky{
     text-align: center;
     margin-top: 5rem;
 }
+.pagination-controls {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .page-btn {
+    padding: 8px 14px;
+    margin: 0 5px;
+    border: none;
+    background: #f66962;
+    color: white;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  .page-btn.active {
+    background: #222;
+  }
+  
 
 .btn{
     display: inline-block;
@@ -354,7 +374,7 @@ header.sticky{
 
 }
 
-.star i{
+.stars i{
     color: var(--main-color);
     margin-right:2px;
     font-size: 17px;
@@ -364,5 +384,102 @@ header.sticky{
     color: #696969;
     font-size: var(--p-font);
     font-weight: 400;
+    letter-spacing: 1px;
+}
+
+.cta-content{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px,auto));
+    gap: 2rem;
+    align-items: center;
+    text-align: center;
+    margin-top: 5rem;
+}
+.cta-img img{
+    width: 100px;
+    height: auto;
+    object-fit: contain;
+    transition: filter 0.3s ease;
+}
+
+.about { 
+    background: url(../images/bckground.jpg);
+    background-size: cover;
+    background-position: center;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 2rem;
+    align-items: center;
+}
+.about-img img{
+    width: 100%;
+    height: auto;
+}
+
+.about-text h2{
+    font-size: var(--h2-font);
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.about-text p{
+    font-size: var(--p-font);
+    color: var(--second-color);
+    font-weight: 500;
+    line-height: 30px;
+    margin-bottom: 30px;
+}
+
+.about-text h4{
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.about-text h5{
+    font-size: 20px;
+    margin-bottom: 40px;
+}
+
+.contact{
+    padding: 60px 13%;
+    background: var(--bg-color);
+}
+
+.main-contact{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px,auto));
+    gap: 2rem;
+}
+
+.contact-content img{
+    height: auto;
+    width: 160px;
+    max-width: 100%;
+    margin-bottom: 30px;
+}
+
+.contact-content li{
+    margin-bottom: 18px;
+}
+
+.contact-content li a{
+    display: block;
+    color: var(--text-color);
+    font-weight: 500;
+    font-size: 15px;
+    transition: all .40s ease;
+}
+
+.contact-content li a:hover{
+    transform: translateX(10px);
+    color: var(--main-color);
+}
+
+.last-text p{
+    text-align: center;
+    padding: 18px;
+    color: var(--second-color);
+    font-size: 15px;
+    font-weight: 500;
     letter-spacing: 1px;
 }
