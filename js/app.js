@@ -8,4 +8,13 @@ document.addEventListener("DOMContentLoaded", () => {
   loadPopularCourses();
   loadCourses();
   loadPartners();
+
+  const searchInput = document.getElementById("course-search");
+  if (searchInput) {
+    searchInput.addEventListener("input", () => {
+      const query = searchInput.value.toLowerCase();
+      console.log("Wpisano:", query); // <- sprawdź czy działa w konsoli!
+      loadCourses(query); // <-- tu przekazujemy tekst do Twojej funkcji
+    });
+  }
 });

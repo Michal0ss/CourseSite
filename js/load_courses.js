@@ -1,4 +1,4 @@
-export async function loadCourses() {
+export async function loadCourses(searchTerm = "") {
   const res = await fetch('data/main-courses.json');
   const courses = await res.json();
   const container = document.getElementById('courses-list');
@@ -8,11 +8,19 @@ export async function loadCourses() {
   const itemsPerPage = 10;
   let currentPage = 1;
 
+  // FILTRUJEMY jeśli searchTerm nie jest pusty
+  let filteredCourses = courses;
+  if (searchTerm) {
+    filteredCourses = courses.filter(course =>
+      course.title.toLowerCase().startsWith(searchTerm)
+    );
+  }
+
   function renderPage(page) {
     container.innerHTML = '';
     const start = (page - 1) * itemsPerPage;
     const end = start + itemsPerPage;
-    const currentCourses = courses.slice(start, end);
+    const currentCourses = filteredCourses.slice(start, end);
 
     currentCourses.forEach(course => {
       const row = document.createElement('div');
@@ -41,7 +49,7 @@ export async function loadCourses() {
 
   function renderPagination() {
     pagination.innerHTML = '';
-    const totalPages = Math.ceil(courses.length / itemsPerPage);
+    const totalPages = Math.ceil(filteredCourses.length / itemsPerPage);
 
     for (let i = 1; i <= totalPages; i++) {
       const btn = document.createElement('button');
@@ -53,16 +61,13 @@ export async function loadCourses() {
         currentPage = i;
         renderPage(currentPage);
         renderPagination();
-
-        // scroll to the beginning of section
-        document.querySelector('.main-btn').scrollIntoView({ behavior: 'smooth' });
+        document.querySelector('.main-courses').scrollIntoView({ behavior: 'smooth' });
       });
 
       pagination.appendChild(btn);
     }
   }
 
-  // Render initial
   renderPage(currentPage);
   renderPagination();
 }
