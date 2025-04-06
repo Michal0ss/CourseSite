@@ -1,8 +1,8 @@
 export async function loadCourses(searchTerm = "", category = "all") {
-  const res = await fetch('data/main-courses.json');
+  const res = await fetch("data/main-courses.json");
   const courses = await res.json();
-  const container = document.getElementById('courses-list');
-  const pagination = document.getElementById('pagination');
+  const container = document.getElementById("courses-list");
+  const pagination = document.getElementById("pagination");
   if (!container || !pagination) return;
 
   const itemsPerPage = 10;
@@ -24,19 +24,19 @@ export async function loadCourses(searchTerm = "", category = "all") {
   }
 
   function renderPage(page) {
-    container.innerHTML = '';
+    container.innerHTML = "";
     const start = (page - 1) * itemsPerPage;
     const end = start + itemsPerPage;
     const currentCourses = filteredCourses.slice(start, end);
 
     currentCourses.forEach(course => {
-      const row = document.createElement('div');
-      row.classList.add('row');
-      row.setAttribute('data-category', course.category); // zmienione z id
+      const row = document.createElement("div");
+      row.classList.add("row");
+      row.setAttribute("data-category", course.category); // zmienione z id
 
       const stars = Array(course.rating)
         .fill(`<a href="#"><i class="bx bxs-star"></i></a>`)
-        .join('');
+        .join("");
 
       row.innerHTML = `
         <img src="${course.image}" alt="${course.title}">
@@ -55,20 +55,20 @@ export async function loadCourses(searchTerm = "", category = "all") {
   }
 
   function renderPagination() {
-    pagination.innerHTML = '';
+    pagination.innerHTML = "";
     const totalPages = Math.ceil(filteredCourses.length / itemsPerPage);
 
     for (let i = 1; i <= totalPages; i++) {
-      const btn = document.createElement('button');
+      const btn = document.createElement("button");
       btn.textContent = i;
-      btn.classList.add('page-btn');
-      if (i === currentPage) btn.classList.add('active');
+      btn.classList.add("page-btn");
+      if (i === currentPage) btn.classList.add("active");
 
-      btn.addEventListener('click', () => {
+      btn.addEventListener("click", () => {
         currentPage = i;
         renderPage(currentPage);
         renderPagination();
-        document.querySelector('.main-courses').scrollIntoView({ behavior: 'smooth' });
+        document.querySelector(".main-courses").scrollIntoView({ behavior: "smooth" });
       });
 
       pagination.appendChild(btn);
@@ -78,16 +78,6 @@ export async function loadCourses(searchTerm = "", category = "all") {
   renderPage(currentPage);
   renderPagination();
 }
-
-
-
-
-
-
-
-
-
-
 
 
 

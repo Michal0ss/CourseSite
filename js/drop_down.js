@@ -20,7 +20,7 @@ export function loadCategoryDropdown(onCategorySelect) {
   const links = container.querySelectorAll(".dropdown-list a");
   const searchInput = container.querySelector("#dropdown-search");
 
-  // 🔎 Szukanie w dropdownie
+
   if (searchInput) {
     searchInput.addEventListener("input", () => {
       const query = searchInput.value.toLowerCase();
@@ -31,7 +31,6 @@ export function loadCategoryDropdown(onCategorySelect) {
     });
   }
 
-  // 📂 Kliknięcie filtra
   links.forEach(link => {
     link.addEventListener("click", (e) => {
       e.preventDefault();
@@ -41,7 +40,7 @@ export function loadCategoryDropdown(onCategorySelect) {
 
       const selected = link.getAttribute("data-category");
 
-      if (typeof onCategorySelect === 'function') {
+      if (typeof onCategorySelect === "function") {
         onCategorySelect(selected); // ⬅ wywołujemy przekazaną funkcję z `app.js`
       }
     });

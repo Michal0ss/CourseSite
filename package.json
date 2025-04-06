@@ -1,12 +1,13 @@
 {
   "name": "capstone-project-template",
   "version": "1.0.0",
+  "type": "module",
   "description": "To make it easy for you to get started with GitLab, here's a list of recommended next steps.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "compile": "sass scss:css",
-    "lint": "eslint js/*.js && stylelint 'scss/**/*.scss'"
+    "compile": "sass scss/main.scss css/style.css --no-source-map",
+    "lint": "eslint . && stylelint \"scss/**/*.scss\""
   },
   "repository": {
     "type": "git",
@@ -16,6 +17,9 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "sass": "^1.86.1"
+    "eslint": "^9.24.0",
+    "sass": "^1.86.1",
+    "stylelint": "^16.18.0",
+    "stylelint-config-standard-scss": "^14.0.0"
   }
 }
