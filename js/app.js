@@ -4,25 +4,25 @@ import { loadCourses } from "./load_courses.js";
 import { loadPartners } from "./loadPartners.js";
 import { loadCategoryDropdown } from "./drop_down.js";
 
-let currentCategory = "all"; // ✅ dodaj to na górze
+let currentCategory = "all"; 
 
 document.addEventListener("DOMContentLoaded", () => {
   loadStats();
   loadPopularCourses();
-  loadCourses(); // ← domyślnie wszystko
+  loadCourses(); 
   loadPartners();
-  loadCategoryDropdown(setCategory); // 🆕 przekaż funkcję zwrotną
+  loadCategoryDropdown(setCategory);
 
   const searchInput = document.getElementById("course-search");
   if (searchInput) {
     searchInput.addEventListener("input", () => {
       const query = searchInput.value.toLowerCase();
-      loadCourses(query, currentCategory); // 🧠 razem z kategorią
+      loadCourses(query, currentCategory); 
     });
   }
 });
 
-// 🧩 funkcja pomocnicza – callback dla dropdownu
+
 function setCategory(newCategory) {
   currentCategory = newCategory;
 
