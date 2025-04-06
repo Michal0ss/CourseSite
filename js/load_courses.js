@@ -8,7 +8,7 @@ export async function loadCourses(searchTerm = "", category = "all") {
   const itemsPerPage = 10;
   let currentPage = 1;
 
-  // 🔍 Filtruj po nazwie kursu
+  //  Filtruj po nazwie kursu
   let filteredCourses = courses;
   if (searchTerm) {
     filteredCourses = filteredCourses.filter(course =>
@@ -16,7 +16,7 @@ export async function loadCourses(searchTerm = "", category = "all") {
     );
   }
 
-  // 📂 Filtruj po kategorii
+  //  Filtruj po kategorii
   if (category !== "all") {
     filteredCourses = filteredCourses.filter(course =>
       course.category === category
