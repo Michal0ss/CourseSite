@@ -10,6 +10,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <!-- icons from google fonts-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
 </head>
 
 <body>
@@ -54,7 +57,62 @@
     </section>
 
     <!-- card-slider section -->
-    
+    <section class="slider-section">
+        <div class="container swiper">
+            <div class="card-wrapper">
+              <!-- Card slides container -->
+              <ul class="card-list swiper-wrapper">
+                <li class="card-item swiper-slide">
+                  <a href="#" class="card-link">
+                    <img src="images/designer.jpg" alt="Card Image" class="card-image">
+                    <p class="badge badge-designer">Designer</p>
+                    <h2 class="card-title">Unleash your creativity</h2>
+                    <button class="card-button material-symbols-rounded">arrow_forward</button>
+                  </a>
+                </li>
+                <li class="card-item swiper-slide">
+                  <a href="#" class="card-link">
+                    <img src="images/developer.jpg" alt="Card Image" class="card-image">
+                    <p class="badge badge-developer">Developer</p>
+                    <h2 class="card-title">Hands-on full-stack experience</h2>
+                    <button class="card-button material-symbols-rounded">arrow_forward</button>
+                  </a>
+                </li>
+                <li class="card-item swiper-slide">
+                  <a href="#" class="card-link">
+                    <img src="images/marketer.jpg" alt="Card Image" class="card-image">
+                    <p class="badge badge-marketer">Marketer</p>
+                    <h2 class="card-title">Become Best digital marketer</h2>
+                    <button class="card-button material-symbols-rounded">arrow_forward</button>
+                  </a>
+                </li>
+                <li class="card-item swiper-slide">
+                  <a href="#" class="card-link">
+                    <img src="images/gamedev.jpg" alt="Card Image" class="card-image">
+                    <p class="badge badge-gamer">Game Dev</p>
+                    <h2 class="card-title">Many games created</h2>
+                    <button class="card-button material-symbols-rounded">arrow_forward</button>
+                  </a>
+                </li>
+                <li class="card-item swiper-slide">
+                  <a href="#" class="card-link">
+                    <img src="images/editor.jpg" alt="Card Image" class="card-image">
+                    <p class="badge badge-editor">Editor</p>
+                    <h2 class="card-title">Best editing skills</h2>
+                    <button class="card-button material-symbols-rounded">arrow_forward</button>
+                  </a>
+                </li>
+              </ul>
+        
+               <!-- Pagination -->
+              <div class="swiper-pagination"></div>
+        
+              <!-- Navigation Buttons -->
+              <div class="swiper-slide-button swiper-button-prev"></div>
+              <div class="swiper-slide-button swiper-button-next"></div>
+            </div>
+        </div>
+    </section>
 
     <!-- container section -->
     <section class="stats-section">
@@ -196,6 +254,8 @@
     <!--js link -->
     <script  type="module" src="js/app.js"></script>
     <script src="js/scroll_bar.js"></script>
+    <!-- using swiper for card slider -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 </body>
 </html>
