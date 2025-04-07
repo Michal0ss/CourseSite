@@ -1,6 +1,7 @@
-# 🎓 Capstone Project Template
+# 🎓 Capstone Project for epam front-end course
 
 A responsive, dynamic educational website built using HTML, Css and JavaScript. It loads data from JSON files, features category filtering, interactive statistics, a course slider, and modern UI components.
+It's last project from course focusing on front-end aiming on expadning knowledge in JS and TS and also on using sass and lint. The project is not perfect; the architecture could be significantly improved, but I was under time pressure due to the deadline.
 
 ---
 
@@ -121,7 +122,7 @@ I would also add in the future adding courses to cart and option for creating an
 
 ## 🖼️ Images Files (in `/images` folder)
 
-All images are from websites as: https://www.freepik.com, https://www.svgrepo.com
+All images are from websites such as: https://www.freepik.com, https://www.svgrepo.com
 
 ---
 
